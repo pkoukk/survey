@@ -6,10 +6,10 @@ import (
 	"io"
 	"os"
 	"strings"
-	"unicode/utf8"
 
 	"github.com/AlecAivazis/survey/v2/core"
 	"github.com/AlecAivazis/survey/v2/terminal"
+	"github.com/mattn/go-runewidth"
 )
 
 // DefaultAskOptions is the default options on ask, using the OS stdio.
@@ -460,7 +460,7 @@ func computeCursorOffset(tmpl string, data IterableOpts, opts []core.OptionAnswe
 			continue
 		}
 		renderedOpt := renderOpt(i, o)
-		valWidth := utf8.RuneCount([]byte(renderedOpt))
+		valWidth := runewidth.StringWidth(renderedOpt)
 		if valWidth > tWidth {
 			splitCount := valWidth / tWidth
 			if valWidth%tWidth == 0 {
