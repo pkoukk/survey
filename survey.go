@@ -7,9 +7,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/AlecAivazis/survey/v2/core"
-	"github.com/AlecAivazis/survey/v2/terminal"
 	"github.com/mattn/go-runewidth"
+	"github.com/pkoukk/survey/v2/core"
+	"github.com/pkoukk/survey/v2/terminal"
 )
 
 // DefaultAskOptions is the default options on ask, using the OS stdio.
